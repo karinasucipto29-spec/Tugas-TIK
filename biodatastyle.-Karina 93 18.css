@@ -1,0 +1,406 @@
+body{
+    background-image: url(biodata.png);
+    background-size: cover;
+    background-position: center;
+}
+h2{ 
+    background-color: rgb(232, 129, 255);
+    color: rgb(255, 252, 164);
+    text-align: center;
+    font-family: "matcha";
+}
+@font-face {
+    font-family: "matcha";
+    src: url(matcha_mint/Matcha\ Mint.otf);
+}
+h1{
+    background-color: rgb(252, 124, 150);
+    color: honeydew;
+    text-align: center;
+    width: 600px;
+}
+div.biodata{
+    margin: 30px auto;
+    width: 70%;
+    background-color:rgb(148, 203, 255);
+    color:rgb(82, 82, 254);
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+div.foto{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid skyblue;
+}
+div.foto img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+div.foto img.top{
+    opacity: 1;
+    z-index: 2;
+}
+div.foto:hover img.top{
+    opacity: 0;
+    transform: scale(1.1);
+}
+div.foto img.bottom{
+    opacity: 0;
+    z-index: 1;
+}
+div.foto:hover img.bottom{
+    opacity: 1;
+    transform: scale(1.1);
+}
+div.Makanan{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+img{padding: 10px;
+}
+ div.Sushi{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(250, 121, 186);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+ }
+ div.Sushi:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+
+ }
+div.Indomie{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(250, 121, 186);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.Indomie:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Polobun{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(250, 121, 186);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.Polobun:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Dubaichewy{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(250, 121, 186);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+div.Dubaichewy:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.YakinikuGrill{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(250, 121, 186);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.YakinikuGrill:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+
+div.Minuman{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+img{padding: 10px;
+}
+
+div.lycheetea{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(164, 141, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.lycheetea:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.MatchaLatte{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(164, 141, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;}
+
+    div.MatchaLatte:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    }
+
+    div.Teazzi{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(164, 141, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.Teazzi:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Boost{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(164, 141, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.Boost:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Milk{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(164, 141, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.Milk:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Brand{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+img{padding: 10px;
+}
+
+div.Nike{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(141, 234, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+}
+
+div.Nike:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Coach{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(141, 234, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+div.Coach:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Laneige{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(141, 234, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.Laneige:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.BrandyMelville{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(141, 234, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.BrandyMelville:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Lululemon{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(141, 234, 249);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.Lululemon:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Dreamcity{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+img{padding: 10px;
+}
+
+div.Sydney{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(255, 255, 121);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.Sydney:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Newyork{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(255, 255, 121);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.Newyork:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.London{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(255, 255, 121);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.London:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.Italy{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(255, 255, 121);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black
+}
+
+div.Italy:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+div.LosAngeles{
+    width: 250px;
+    height: 280px;
+    border-radius: 15px;
+    background-color:rgb(255, 255, 121);
+    box-shadow: 0 4px 8px 0; 
+    box-shadow: black;
+    position: relative;
+    z-index: 10;
+}
+
+div.LosAngeles:hover{
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}

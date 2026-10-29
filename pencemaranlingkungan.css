@@ -1,0 +1,3208 @@
+/*
+   WHEN EARTH CAN'T BREATHE
+   ENVIRONMENTAL POLLUTION WEBSITE - CLASS 93
+   ========================================================= */
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --cream: #fffaf2;
+    --cream-light: #fffefb;
+    --sage-light: #f1f8f2;
+
+    --green-dark: #315342;
+    --green: #4f8064;
+    --green-light: #dcefe0;
+
+    --mint: #a9d9bd;
+    --mint-light: #e9f7ed;
+
+    --blue: #83c8d5;
+    --blue-light: #e4f5f7;
+
+    --yellow: #f4cd72;
+    --yellow-light: #fff3c9;
+
+    --coral: #ef9b83;
+    --coral-light: #fce1d8;
+
+    --pink: #e8abc0;
+    --pink-light: #f8e5ed;
+
+    --purple: #b7a6d8;
+    --purple-light: #eee9f8;
+
+    --text: #29483b;
+    --text-light: #6d7f76;
+
+    --white: #ffffff;
+
+    --shadow-soft: 0 10px 40px rgba(48, 83, 66, 0.12);
+    --shadow-hover: 0 20px 55px rgba(48, 83, 66, 0.2);
+
+    --radius: 20px;
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(169, 217, 189, 0.28), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(239, 155, 131, 0.18), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(131, 200, 213, 0.2), transparent 30%),
+        var(--cream);
+
+    overflow-x: hidden;
+    line-height: 1.7;
+
+    animation: backgroundMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   SELECTION
+   ========================= */
+
+::selection {
+    background: var(--coral);
+    color: var(--white);
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 82px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 250, 242, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(79, 128, 100, 0.1);
+
+    z-index: 1000;
+
+    transition: all 0.4s ease;
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 35px rgba(48, 83, 66, 0.08);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--green-dark);
+
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--coral);
+    transform: translateY(-2px) rotate(-1deg);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    color: var(--green-dark);
+
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--coral);
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--coral);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 150px 8% 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 80% 30%, rgba(131, 200, 213, 0.22), transparent 30%),
+        radial-gradient(circle at 20% 70%, rgba(169, 217, 189, 0.25), transparent 30%),
+        var(--cream);
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 205, 114, 0.12);
+
+    filter: blur(30px);
+
+    animation: blobMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes blobMove {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-50px, 30px) scale(1.12);
+    }
+}
+
+.hero-text {
+    position: relative;
+    z-index: 5;
+
+    width: 55%;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: var(--green);
+
+    animation: textFloat 3s ease-in-out infinite;
+}
+
+@keyframes textFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(58px, 8vw, 120px);
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    color: var(--green-dark);
+
+    letter-spacing: -5px;
+
+    animation: titleFloat 5s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-0.5deg);
+    }
+}
+
+.hero h1 span {
+    color: var(--coral);
+
+    display: inline-block;
+
+    animation: colorfulText 4s ease-in-out infinite;
+}
+
+@keyframes colorfulText {
+    0%,
+    100% {
+        color: var(--coral);
+        transform: translateY(0);
+    }
+
+    33% {
+        color: var(--green);
+        transform: translateY(-5px);
+    }
+
+    66% {
+        color: #d69b54;
+        transform: translateY(3px);
+    }
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin-top: 28px;
+
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 35px;
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    background: var(--green-dark);
+    color: var(--white);
+
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    box-shadow: 0 12px 30px rgba(49, 83, 66, 0.18);
+
+    transition: all 0.35s ease;
+}
+
+.hero-button:hover {
+    background: var(--coral);
+    transform: translateY(-6px) scale(1.04);
+
+    box-shadow:
+        0 15px 35px rgba(239, 155, 131, 0.3),
+        0 0 25px rgba(239, 155, 131, 0.2);
+}
+
+
+/* =========================
+   HERO EARTH
+   ========================= */
+
+.earth-container {
+    position: relative;
+
+    width: 390px;
+    height: 390px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: auto;
+
+    animation: floatingEarth 6s ease-in-out infinite;
+}
+
+@keyframes floatingEarth {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(2deg);
+    }
+}
+
+.earth-glow {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background: rgba(131, 200, 213, 0.35);
+
+    filter: blur(35px);
+
+    animation: earthGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes earthGlow {
+    from {
+        transform: scale(0.9);
+        opacity: 0.55;
+    }
+
+    to {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+.earth-image {
+    position: relative;
+
+    width: 280px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 25px 50px rgba(48, 83, 66, 0.2),
+        0 0 50px rgba(131, 200, 213, 0.3);
+
+    z-index: 2;
+
+    transition: all 0.5s ease;
+}
+
+.earth-container:hover .earth-image {
+    transform: scale(1.08) rotate(5deg);
+
+    box-shadow:
+        0 30px 60px rgba(48, 83, 66, 0.25),
+        0 0 70px rgba(131, 200, 213, 0.55);
+}
+
+.earth-orbit {
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    border: 2px dashed rgba(79, 128, 100, 0.35);
+
+    border-radius: 50%;
+
+    animation: orbitRotate 15s linear infinite;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--green);
+
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 8px);
+    }
+}
+
+
+/* =========================
+   FLOATING PARTICLES
+   ========================= */
+
+.particle {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    opacity: 0.7;
+
+    animation: particleFloat 5s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+    background: var(--coral);
+}
+
+.particle:nth-child(2) {
+    background: var(--blue);
+}
+
+.particle:nth-child(3) {
+    background: var(--yellow);
+}
+
+.particle:nth-child(4) {
+    background: var(--mint);
+}
+
+@keyframes particleFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+
+/* =========================
+   GENERAL SECTION
+   ========================= */
+
+.section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 130px 8%;
+
+    overflow: hidden;
+}
+
+.section-heading {
+    margin-bottom: 60px;
+}
+
+.section-heading.center {
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 6vw, 90px);
+
+    line-height: 1;
+
+    color: var(--green-dark);
+
+    font-weight: 500;
+
+    animation: headingFloat 5s ease-in-out infinite;
+}
+
+.section-heading h2 span {
+    color: var(--coral);
+}
+
+@keyframes headingFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.section-number {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    color: var(--coral);
+}
+
+
+/* =========================
+   TOPIC MENU
+   ========================= */
+
+.topic-menu {
+    min-height: 100vh;
+
+    padding: 130px 8%;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(169, 217, 189, 0.25), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(232, 171, 192, 0.18), transparent 25%),
+        var(--sage-light);
+}
+
+.topic-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.topic-card {
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 28px 22px;
+
+    border-radius: var(--radius);
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 2px solid transparent;
+
+    box-shadow: var(--shadow-soft);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+.topic-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    top: -45px;
+    right: -45px;
+
+    border-radius: 50%;
+
+    opacity: 0.35;
+
+    transition: transform 0.5s ease;
+}
+
+.topic-card:nth-child(1)::before {
+    background: var(--mint);
+}
+
+.topic-card:nth-child(2)::before {
+    background: var(--blue);
+}
+
+.topic-card:nth-child(3)::before {
+    background: var(--yellow);
+}
+
+.topic-card:nth-child(4)::before {
+    background: var(--coral);
+}
+
+.topic-card:nth-child(5)::before {
+    background: var(--purple);
+}
+
+.topic-card:hover {
+    transform: translateY(-15px) rotate(-1deg);
+
+    box-shadow:
+        var(--shadow-hover),
+        0 0 30px rgba(169, 217, 189, 0.25);
+
+    background: var(--white);
+}
+
+.topic-card:hover::before {
+    transform: scale(2);
+}
+
+.topic-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 25px;
+
+    transition: transform 0.4s ease;
+}
+
+.topic-card:nth-child(1) .topic-icon {
+    background: var(--mint-light);
+}
+
+.topic-card:nth-child(2) .topic-icon {
+    background: var(--blue-light);
+}
+
+.topic-card:nth-child(3) .topic-icon {
+    background: var(--yellow-light);
+}
+
+.topic-card:nth-child(4) .topic-icon {
+    background: var(--coral-light);
+}
+
+.topic-card:nth-child(5) .topic-icon {
+    background: var(--purple-light);
+}
+
+.topic-card:hover .topic-icon {
+    transform: scale(1.15) rotate(8deg);
+}
+
+.topic-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 21px;
+
+    color: var(--green-dark);
+}
+
+.topic-card p {
+    font-size: 14px;
+
+    color: var(--text-light);
+}
+
+.topic-card .enter {
+    position: absolute;
+
+    left: 22px;
+    bottom: 22px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: var(--green);
+
+    transition: all 0.3s ease;
+}
+
+.topic-card:hover .enter {
+    color: var(--coral);
+
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   PROBLEM SECTION
+   ========================= */
+
+.problem-section {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(239, 155, 131, 0.16), transparent 25%),
+        var(--cream-light);
+}
+
+.problem-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.problem-text {
+    font-size: 18px;
+
+    color: var(--text-light);
+}
+
+.problem-text p {
+    margin-bottom: 22px;
+}
+
+.problem-text p:first-child::first-letter {
+    font-size: 65px;
+    float: left;
+
+    line-height: 0.8;
+
+    padding-right: 8px;
+
+    color: var(--coral);
+
+    font-family: "Playfair Display", serif;
+}
+
+.quote-box {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-left: 5px solid var(--coral);
+
+    border-radius: 0 20px 20px 0;
+
+    background: var(--coral-light);
+
+    color: var(--green-dark);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    transition: all 0.4s ease;
+}
+
+.quote-box:hover {
+    transform: translateX(10px);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.problem-visual {
+    position: relative;
+}
+
+.image-frame {
+    position: relative;
+
+    padding: 15px;
+
+    border-radius: 35px;
+
+    background: linear-gradient(
+        135deg,
+        var(--mint),
+        var(--blue),
+        var(--yellow),
+        var(--coral)
+    );
+
+    box-shadow: var(--shadow-hover);
+
+    transition: transform 0.5s ease;
+}
+
+.image-frame:hover {
+    transform: rotate(2deg) scale(1.03);
+}
+
+.image-frame img {
+    width: 100%;
+
+    border-radius: 25px;
+
+    object-fit: cover;
+}
+
+.image-label {
+    position: absolute;
+
+    bottom: 30px;
+    left: 30px;
+
+    padding: 9px 16px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--green-dark);
+}
+
+
+/* =========================
+   POLLUTION SECTION
+   ========================= */
+
+.pollution-section {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(131, 200, 213, 0.2), transparent 25%),
+        var(--sage-light);
+}
+
+.pollution-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.pollution-card {
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition: all 0.45s ease;
+}
+
+.pollution-card:hover {
+    transform: translateY(-15px) rotate(1deg);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+    position: relative;
+
+    height: 250px;
+
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.pollution-card:hover .card-image img {
+    transform: scale(1.12);
+}
+
+.card-number {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-type {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--coral);
+}
+
+.card-content h3 {
+    margin-bottom: 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    color: var(--green-dark);
+}
+
+.card-content p {
+    color: var(--text-light);
+}
+
+.cause-line {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(49, 83, 66, 0.1);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CAUSES
+   ========================= */
+
+.causes-section {
+    background: var(--cream);
+}
+
+.cause-flow {
+    position: relative;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.cause-flow::before {
+    content: "";
+
+    position: absolute;
+
+    left: 39px;
+    top: 35px;
+    bottom: 35px;
+
+    width: 2px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--mint),
+        var(--blue),
+        var(--yellow),
+        var(--coral),
+        var(--purple)
+    );
+}
+
+.flow-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow: var(--shadow-soft);
+
+    transition: all 0.4s ease;
+}
+
+.flow-item:hover {
+    transform: translateX(15px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.flow-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--mint-light);
+
+    border: 4px solid var(--cream);
+
+    font-weight: 800;
+}
+
+.flow-item:nth-child(2) .flow-icon {
+    background: var(--blue-light);
+}
+
+.flow-item:nth-child(3) .flow-icon {
+    background: var(--yellow-light);
+}
+
+.flow-item:nth-child(4) .flow-icon {
+    background: var(--coral-light);
+}
+
+.flow-item:nth-child(5) .flow-icon {
+    background: var(--purple-light);
+}
+
+.flow-item h3 {
+    margin-bottom: 5px;
+
+    color: var(--green-dark);
+}
+
+.flow-item p {
+    color: var(--text-light);
+}
+
+.flow-arrow {
+    position: absolute;
+
+    right: 25px;
+
+    font-size: 22px;
+
+    color: var(--coral);
+
+    transition: transform 0.3s ease;
+}
+
+.flow-item:hover .flow-arrow {
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   IMPACT
+   ========================= */
+
+.impact-section {
+    background:
+        radial-gradient(circle at 90% 20%, rgba(232, 171, 192, 0.18), transparent 25%),
+        var(--sage-light);
+}
+
+.impact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.impact-card {
+    min-height: 240px;
+
+    padding: 25px;
+
+    border-radius: 28px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition: all 0.4s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-12px) rotate(-1deg);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.impact-card:nth-child(1) {
+    border-top: 6px solid var(--mint);
+}
+
+.impact-card:nth-child(2) {
+    border-top: 6px solid var(--blue);
+}
+
+.impact-card:nth-child(3) {
+    border-top: 6px solid var(--yellow);
+}
+
+.impact-card:nth-child(4) {
+    border-top: 6px solid var(--coral);
+}
+
+.impact-card:nth-child(5) {
+    border-top: 6px solid var(--purple);
+}
+
+.impact-card h3 {
+    margin: 15px 0 10px;
+
+    font-size: 20px;
+
+    color: var(--green-dark);
+}
+
+.impact-card p {
+    font-size: 14px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================
+   SOLUTION
+   ========================= */
+
+.solution-section {
+    background: var(--cream-light);
+}
+
+.solution-list {
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.solution-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid rgba(49, 83, 66, 0.12);
+
+    transition: all 0.35s ease;
+}
+
+.solution-item:hover {
+    padding-left: 15px;
+}
+
+.solution-item:nth-child(1) strong {
+    color: var(--green);
+}
+
+.solution-item:nth-child(2) strong {
+    color: #4e94a2;
+}
+
+.solution-item:nth-child(3) strong {
+    color: #c49339;
+}
+
+.solution-item:nth-child(4) strong {
+    color: var(--coral);
+}
+
+.solution-item:nth-child(5) strong {
+    color: #927ab7;
+}
+
+.solution-item:nth-child(6) strong {
+    color: #5b9c75;
+}
+
+.solution-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 50px;
+
+    color: var(--coral);
+
+    line-height: 1;
+}
+
+.solution-item h3 {
+    margin-bottom: 8px;
+
+    font-size: 24px;
+
+    color: var(--green-dark);
+}
+
+.solution-item p {
+    color: var(--text-light);
+}
+
+
+/* =========================
+   WHAT IF / FUTURE
+   ========================= */
+
+.what-if {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 140px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at center, rgba(169, 217, 189, 0.3), transparent 35%),
+        var(--sage-light);
+}
+
+.what-if::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(79, 128, 100, 0.2);
+
+    border-radius: 50%;
+
+    animation: orbitRotate 20s linear infinite;
+}
+
+.what-if::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: var(--yellow-light);
+
+    filter: blur(5px);
+
+    animation: futureOrb 5s ease-in-out infinite;
+}
+
+@keyframes futureOrb {
+    0%,
+    100% {
+        transform: translate(-100px, -100px);
+    }
+
+    50% {
+        transform: translate(100px, 100px);
+    }
+}
+
+.statement-orb {
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background: rgba(131, 200, 213, 0.2);
+
+    filter: blur(25px);
+
+    animation: orbPulse 4s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+    0%,
+    100% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.what-if-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 900px;
+}
+
+.what-if-content h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 115px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    color: var(--green-dark);
+
+    animation: futureText 5s ease-in-out infinite;
+}
+
+@keyframes futureText {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+.future-line {
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   FINAL SECTION
+   ========================================================= */
+
+.final-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 130px 8% 100px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(169, 217, 189, 0.35), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(239, 155, 131, 0.25), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(131, 200, 213, 0.25), transparent 30%),
+        var(--cream);
+}
+
+.final-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 40%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(169, 217, 189, 0.18);
+
+    filter: blur(40px);
+
+    z-index: -2;
+
+    animation: finalGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes finalGlow {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.final-section::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 30px;
+
+    border: 1px solid rgba(79, 128, 100, 0.12);
+
+    border-radius: 50px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.final-section > .eyebrow,
+.final-section > h2,
+.final-section > h3,
+.final-section > .final-text,
+.final-section > .final-choice,
+.final-section > .final-tagline {
+    position: relative;
+
+    z-index: 5;
+}
+
+.final-section h2 {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 115px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    color: var(--green-dark);
+
+    animation: finalTitleFloat 5s ease-in-out infinite;
+}
+
+@keyframes finalTitleFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.final-section h3 {
+    margin-top: 20px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(28px, 4vw, 55px);
+
+    color: var(--coral);
+
+    animation: finalColorText 4s ease-in-out infinite;
+}
+
+@keyframes finalColorText {
+    0%,
+    100% {
+        color: var(--coral);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        color: var(--green);
+        transform: rotate(-1deg) translateY(-4px);
+    }
+}
+
+.final-text {
+    max-width: 750px;
+
+    margin: 30px auto 0;
+
+    font-size: 18px;
+
+    color: var(--text-light);
+}
+
+.final-choice {
+    margin-top: 30px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--green);
+}
+
+.final-tagline {
+    margin-top: 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    color: var(--green-dark);
+}
+
+
+/* =========================================================
+   PHOTO GALLERY
+   ADA DI BAWAH FINAL MESSAGE
+   ========================================================= */
+
+.eco-gallery {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1250px, 100%);
+
+    height: 430px;
+
+    margin: 70px auto 0;
+
+    display: block;
+}
+
+.eco-photo {
+    position: absolute;
+
+    width: 210px;
+    height: 280px;
+
+    border-radius: 28px;
+
+    background-color: var(--white);
+
+    background-size: cover;
+    background-position: center;
+
+    border: 9px solid var(--white);
+
+    box-shadow:
+        0 18px 40px rgba(49, 83, 66, 0.18),
+        0 0 0 5px rgba(255, 255, 255, 0.4);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.45s ease,
+        filter 0.45s ease;
+
+    animation: galleryFloat 5s ease-in-out infinite;
+}
+
+@keyframes galleryFloat {
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -12px;
+    }
+}
+
+
+/* FOTO NORMAL */
+
+.eco-photo-1 {
+    left: 1%;
+    top: 45px;
+
+    background-image: url("L.png");
+
+    border-color: var(--mint);
+    transform: rotate(-6deg);
+}
+
+.eco-photo-2 {
+    left: 21%;
+    top: 0;
+
+    background-image: url("o.jpg");
+
+    border-color: var(--blue);
+    transform: rotate(4deg);
+
+    animation-delay: -1s;
+}
+
+.eco-photo-3 {
+    left: 40%;
+    top: 65px;
+
+    background-image: url("v.jpg");
+
+    border-color: var(--yellow);
+    transform: rotate(-2deg);
+
+    animation-delay: -2s;
+}
+
+.eco-photo-4 {
+    right: 20%;
+    top: 5px;
+
+    background-image: url("e.png");
+
+    border-color: var(--coral);
+    transform: rotate(5deg);
+
+    animation-delay: -3s;
+}
+
+.eco-photo-5 {
+    right: 1%;
+    top: 50px;
+
+    background-image: url("thk.png");
+
+    border-color: var(--purple);
+    transform: rotate(2deg);
+
+    animation-delay: -4s;
+}
+
+
+/* FOTO KEDUA YANG MUNCUL SAAT HOVER */
+
+.eco-photo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.6s ease;
+
+    z-index: 1;
+}
+
+
+/* SECOND IMAGE */
+
+.eco-photo-1::after {
+    background-image: url("hutan.jpg");
+}
+
+.eco-photo-2::after {
+    background-image: url("city.jpg");
+}
+
+.eco-photo-3::after {
+    background-image: url("ocean.jpg");
+}
+
+.eco-photo-4::after {
+    background-image: url("earth.jpg");
+}
+
+.eco-photo-5::after {
+    background-image: url("photo 5.jpg");
+}
+
+
+/* WARNA/GLOW DI ATAS FOTO */
+
+.eco-photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.1),
+            transparent 45%,
+            rgba(49, 83, 66, 0.38)
+        );
+
+    opacity: 0.8;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* HOVER FOTO */
+
+.eco-photo:hover {
+    z-index: 20;
+
+    transform:
+        translateY(-22px)
+        scale(1.12)
+        rotate(0deg);
+
+    box-shadow:
+        0 30px 60px rgba(49, 83, 66, 0.25),
+        0 0 25px rgba(169, 217, 189, 0.55),
+        0 0 60px rgba(131, 200, 213, 0.25);
+
+    filter: brightness(1.08) saturate(1.12);
+}
+
+.eco-photo:hover::after {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+.eco-photo:hover::before {
+    opacity: 0.25;
+}
+
+
+/* LABEL FOTO */
+
+.eco-photo span {
+    position: absolute;
+
+    left: 15px;
+    bottom: 15px;
+
+    z-index: 5;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: var(--green-dark);
+
+    transition: all 0.4s ease;
+}
+
+.eco-photo:hover span {
+    background: var(--white);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(49, 83, 66, 0.15);
+}
+
+
+/* FOTO 5 - KHUSUS KARENA POSISINYA */
+
+.eco-photo-5:hover {
+    transform:
+        translateY(-22px)
+        scale(1.12)
+        rotate(0deg);
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+   ========================================================= */
+
+.page-navigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1000px;
+
+    margin: 70px auto 0;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(49, 83, 66, 0.1);
+}
+
+.page-navigation a {
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--green);
+
+    transition: all 0.3s ease;
+}
+
+.page-navigation a:hover {
+    color: var(--coral);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   AUDIO / MUSIC
+   ========================================================= */
+
+#bg-music,
+.background-music {
+    position: fixed;
+    top: 88px;
+    right: 22px;
+    bottom: auto;
+    width: 280px;
+    z-index: 9999;
+    border-radius: 30px;
+    box-shadow:
+        0 12px 30px rgba(49, 83, 66, 0.20),
+        0 0 20px rgba(169, 217, 189, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+#bg-music:hover,
+.background-music:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 18px 40px rgba(49, 83, 66, 0.25),
+        0 0 30px rgba(239, 155, 131, 0.35),
+        0 0 45px rgba(131, 200, 213, 0.25);
+}
+
+/* =========================================================
+   SHIMMER + COLORFUL EFFECTS
+   ========================================================= */
+
+@keyframes shimmerMove {
+    0% {
+        background-position: -220% 0;
+    }
+    100% {
+        background-position: 220% 0;
+    }
+}
+
+.hero-button,
+.topic-card,
+.pollution-card,
+.flow-item,
+.impact-card,
+.solution-item,
+.final-choice {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-button::after,
+.topic-card::after,
+.pollution-card::after,
+.flow-item::after,
+.impact-card::after,
+.solution-item::after,
+.final-choice::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.65) 50%, transparent 65%);
+    background-size: 220% 100%;
+    transform: translateX(-100%);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.hero-button:hover::after,
+.topic-card:hover::after,
+.pollution-card:hover::after,
+.flow-item:hover::after,
+.impact-card:hover::after,
+.solution-item:hover::after,
+.final-choice:hover::after {
+    opacity: 1;
+    animation: shimmerMove 0.9s ease forwards;
+}
+
+.section-heading h2,
+.hero h1,
+.final-section h2 {
+    background-image: linear-gradient(90deg, var(--green-dark), var(--coral), var(--blue), var(--green-dark));
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleShimmer 6s linear infinite;
+}
+
+@keyframes titleShimmer {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 250% center;
+    }
+}
+
+.eco-photo {
+    box-shadow:
+        0 18px 40px rgba(49, 83, 66, 0.18),
+        0 0 0 5px rgba(255, 255, 255, 0.45),
+        0 0 22px rgba(169, 217, 189, 0.20);
+}
+
+.eco-photo:hover {
+    box-shadow:
+        0 30px 60px rgba(49, 83, 66, 0.25),
+        0 0 25px rgba(169, 217, 189, 0.75),
+        0 0 55px rgba(131, 200, 213, 0.45),
+        0 0 80px rgba(239, 155, 131, 0.25);
+}
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .topic-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pollution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eco-photo {
+        width: 180px;
+        height: 245px;
+    }
+
+    .eco-photo-1 {
+        left: 0;
+    }
+
+    .eco-photo-2 {
+        left: 20%;
+    }
+
+    .eco-photo-3 {
+        left: 40%;
+    }
+
+    .eco-photo-4 {
+        right: 18%;
+    }
+
+    .eco-photo-5 {
+        right: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 120px 7% 90px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 15vw, 85px);
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .earth-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .earth-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .earth-glow {
+        width: 260px;
+        height: 260px;
+    }
+
+    .earth-orbit {
+        width: 280px;
+        height: 280px;
+    }
+
+    .section,
+    .topic-menu {
+        padding: 90px 7%;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pollution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-item {
+        grid-template-columns: 55px 1fr;
+
+        gap: 18px;
+    }
+
+    .solution-number {
+        font-size: 35px;
+    }
+
+    .what-if {
+        padding: 100px 7%;
+    }
+
+    .what-if-content h2 {
+        font-size: clamp(50px, 15vw, 80px);
+    }
+
+    .final-section {
+        padding: 100px 7% 80px;
+    }
+
+    .final-section::after {
+        inset: 15px;
+        border-radius: 30px;
+    }
+
+    /* Gallery menjadi grid di HP */
+
+    .eco-gallery {
+        height: auto;
+
+        margin-top: 50px;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .eco-photo {
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        width: 100%;
+        height: 220px;
+
+        transform: rotate(0deg) !important;
+
+        animation: none;
+    }
+
+    .eco-photo-5 {
+        grid-column: 1 / -1;
+
+        width: 55%;
+
+        justify-self: center;
+    }
+
+    .eco-photo:hover,
+    .eco-photo-5:hover {
+        transform: translateY(-10px) scale(1.04) !important;
+    }
+
+    .background-music {
+        width: 220px;
+
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .page-navigation {
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 48px;
+    }
+
+    .flow-item {
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .flow-arrow {
+        display: none;
+    }
+
+    .eco-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .eco-photo {
+        height: 260px;
+    }
+
+    .eco-photo-5 {
+        width: 100%;
+    }
+
+    #bg-music,
+    .background-music {
+        width: 190px;
+        top: 78px;
+        right: 8px;
+        bottom: auto;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   FINAL POLISH - BOTANICAL BACKGROUND + TITLE FIX
+   ========================================================= */
+
+/* Biar bagian akhir terasa lebih seperti halaman "mencintai lingkungan" */
+.final-section {
+    background:
+        radial-gradient(circle at 12% 18%, rgba(169, 217, 189, 0.45), transparent 22%),
+        radial-gradient(circle at 88% 18%, rgba(131, 200, 213, 0.25), transparent 22%),
+        radial-gradient(circle at 50% 75%, rgba(244, 205, 114, 0.18), transparent 25%),
+        linear-gradient(180deg, #f7fff8 0%, #eef9f0 55%, #e4f4e7 100%);
+}
+
+/* Judul dibuat lebih terkendali supaya seluruh kalimat terlihat */
+.final-section h2 {
+    position: relative;
+    z-index: 30;
+    width: min(100%, 1000px);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-size: clamp(44px, 6vw, 86px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    overflow: visible;
+    text-wrap: balance;
+    animation: finalTitleFloat 5s ease-in-out infinite;
+}
+
+.final-section h3 {
+    position: relative;
+    z-index: 30;
+}
+
+.final-section > .final-text,
+.final-section > .final-choice,
+.final-section > .final-tagline,
+.final-section > .eyebrow {
+    position: relative;
+    z-index: 30;
+}
+
+/* Gallery tetap di bawah tulisan, bukan menutupi judul */
+.eco-gallery {
+    position: relative;
+    z-index: 10;
+}
+
+.eco-photo {
+    z-index: 10;
+}
+
+.eco-photo:hover {
+    z-index: 40;
+}
+
+/* Daun dekoratif di sekitar label */
+.final-section > .eyebrow::before,
+.final-section > .eyebrow::after {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 16px;
+    border-radius: 100% 0 100% 0;
+    background: var(--green-light);
+    opacity: 0.9;
+    box-shadow: 0 0 18px rgba(79, 128, 100, 0.12);
+    animation: leafSway 4s ease-in-out infinite;
+}
+
+.final-section > .eyebrow::before {
+    right: calc(100% + 18px);
+    top: 2px;
+    transform: rotate(-25deg);
+}
+
+.final-section > .eyebrow::after {
+    left: calc(100% + 18px);
+    top: 2px;
+    transform: scaleX(-1) rotate(-25deg);
+    background: var(--mint);
+    animation-delay: -2s;
+}
+
+@keyframes leafSway {
+    0%,
+    100% {
+        transform: rotate(-25deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-12deg) translateY(-4px);
+    }
+}
+
+/* Dekorasi daun tambahan pada tagline */
+.final-tagline {
+    position: relative;
+    display: inline-block;
+}
+
+.final-tagline::before,
+.final-tagline::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 11px;
+    border-radius: 100% 0 100% 0;
+    background: var(--mint);
+    opacity: 0.8;
+    top: 50%;
+    animation: tinyLeaf 3.5s ease-in-out infinite;
+}
+
+.final-tagline::before {
+    right: calc(100% + 12px);
+    transform: rotate(-30deg);
+}
+
+.final-tagline::after {
+    left: calc(100% + 12px);
+    transform: scaleX(-1) rotate(-30deg);
+    background: var(--green-light);
+    animation-delay: -1.7s;
+}
+
+@keyframes tinyLeaf {
+    0%,
+    100% {
+        transform: rotate(-30deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-18deg) translateY(-3px);
+    }
+}
+
+/* Cahaya lembut bergerak di background */
+.final-section::before {
+    width: 620px;
+    height: 620px;
+    background: rgba(169, 217, 189, 0.20);
+    filter: blur(55px);
+}
+
+/* Border lebih lembut dan fresh */
+.final-section::after {
+    border-color: rgba(79, 128, 100, 0.16);
+    border-width: 2px;
+}
+
+/* Jangan biarkan tulisan terlalu besar di layar kecil */
+@media (max-width: 750px) {
+    .final-section h2 {
+        width: 100%;
+        padding: 0 5px;
+        font-size: clamp(42px, 12vw, 70px);
+        letter-spacing: -1px;
+        line-height: 1.05;
+    }
+
+    .final-section > .eyebrow::before,
+    .final-section > .eyebrow::after {
+        display: none;
+    }
+
+    .final-tagline::before,
+    .final-tagline::after {
+        display: none;
+    }
+}
+
+/* =========================================================
+   FINAL LAYOUT FIX - JUDUL TIDAK DITUTUP FOTO
+   ========================================================= */
+
+.final-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.final-section > .eyebrow,
+.final-section > h2,
+.final-section > h3,
+.final-section > .final-text,
+.final-section > .final-choice,
+.final-section > .final-tagline,
+.final-section > .eco-gallery {
+    flex-shrink: 0;
+}
+
+.final-section > .eyebrow {
+    order: 1;
+}
+
+.final-section > h2 {
+    order: 2;
+    width: min(92%, 1050px);
+    max-width: 1050px;
+    margin: 18px auto 0;
+    padding: 0;
+    text-align: center;
+    font-size: clamp(48px, 5.7vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+    overflow: visible;
+    word-break: normal;
+    overflow-wrap: normal;
+    text-wrap: balance;
+}
+
+.final-section > h3 {
+    order: 3;
+    width: min(92%, 900px);
+    margin-top: 22px;
+    text-align: center;
+    font-size: clamp(28px, 3.4vw, 52px);
+    line-height: 1.1;
+}
+
+.final-section > .final-text {
+    order: 4;
+    width: min(92%, 760px);
+    margin-top: 24px;
+    text-align: justify;
+    text-indent: 35px;
+}
+
+.final-section > .final-choice {
+    order: 5;
+    margin-top: 24px;
+}
+
+.final-section > .final-tagline {
+    order: 6;
+}
+
+.final-section > .eco-gallery {
+    order: 7;
+    position: relative;
+    z-index: 8;
+    width: min(1250px, 94%);
+    height: 430px;
+    margin: 70px auto 0;
+    flex-shrink: 0;
+}
+
+/* Foto hanya hidup di area gallery. Tidak boleh naik ke area judul. */
+.final-section .eco-photo {
+    z-index: 8;
+}
+
+.final-section .eco-photo:hover {
+    z-index: 12;
+}
+
+/* Dekorasi tanaman lembut di sudut background */
+.final-section {
+    background:
+        radial-gradient(circle at 8% 18%, rgba(169,217,189,.42), transparent 20%),
+        radial-gradient(circle at 92% 20%, rgba(131,200,213,.22), transparent 21%),
+        radial-gradient(circle at 15% 88%, rgba(79,128,100,.12), transparent 18%),
+        radial-gradient(circle at 86% 82%, rgba(244,205,114,.16), transparent 18%),
+        linear-gradient(180deg, #f9fff9 0%, #eef9f0 52%, #e4f4e7 100%);
+}
+
+/* batang + daun dekoratif */
+.final-section::marker {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .final-section > h2 {
+        width: min(94%, 900px);
+        font-size: clamp(46px, 6.5vw, 78px);
+    }
+
+    .final-section > .eco-gallery {
+        height: 700px;
+    }
+}
+
+@media (max-width: 750px) {
+    .final-section {
+        padding-top: 95px;
+    }
+
+    .final-section > h2 {
+        width: 94%;
+        font-size: clamp(42px, 11vw, 68px);
+        line-height: 1.04;
+        letter-spacing: -1px;
+    }
+
+    .final-section > .final-text {
+        width: 90%;
+    }
+
+    .final-section > .eco-gallery {
+        width: 90%;
+        height: auto;
+        margin-top: 45px;
+    }
+}
+
+/* =========================================================
+   FIX HERO TITLE
+   JUDUL HARUS MUNCUL FULL
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 130px 7% 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
+}
+
+/* AREA TEXT DIBUAT LEBIH LEBAR */
+.hero-text {
+    position: relative;
+    z-index: 10;
+    width: 60%;
+    max-width: 760px;
+    flex-shrink: 0;
+}
+
+/* JUDUL FULL */
+.hero-text h1 {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -4px;
+
+    color: var(--green-dark);
+
+    white-space: normal;
+    overflow: visible;
+
+    position: relative;
+    z-index: 20;
+
+    animation: titleFloat 5s ease-in-out infinite;
+}
+
+/* BAGIAN CAN'T BREATHE JANGAN HILANG */
+.hero-text h1 span {
+    display: inline;
+
+    position: relative;
+    z-index: 21;
+
+    color: var(--coral);
+
+    white-space: nowrap;
+
+    background-image: linear-gradient(
+        90deg,
+        var(--coral),
+        var(--green),
+        #d69b54,
+        var(--coral)
+    );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titleColorMove 5s linear infinite;
+}
+
+@keyframes titleColorMove {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 250% center;
+    }
+
+}
+
+/* EYEBROW TETAP DI ATAS */
+.hero-text .eyebrow {
+    position: relative;
+    z-index: 20;
+    margin-bottom: 22px;
+}
+
+/* DESCRIPTION JANGAN NUTUP JUDUL */
+.hero-description {
+    position: relative;
+    z-index: 10;
+
+    max-width: 650px;
+    margin-top: 30px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: var(--text-light);
+}
+
+/* EARTH TETAP DI SAMPING */
+.earth-container {
+    position: relative;
+    z-index: 3;
+
+    width: 390px;
+    height: 390px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================================
+   TITLE HOVER
+   ========================================================= */
+
+.hero-text h1 {
+    transition: transform 0.4s ease;
+}
+
+.hero-text h1:hover {
+    transform: translateY(-6px) scale(1.015);
+}
+
+/* =========================================================
+   DESKTOP BESAR
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    .hero-text {
+        width: 62%;
+        max-width: 800px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(65px, 7vw, 105px);
+    }
+
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        gap: 20px;
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero-text {
+        width: 58%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(52px, 7vw, 82px);
+        letter-spacing: -3px;
+    }
+
+    .earth-container {
+        width: 330px;
+        height: 330px;
+    }
+
+}
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .hero {
+        min-height: auto;
+        padding: 120px 7% 90px;
+
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .hero-text h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(48px, 14vw, 78px);
+        line-height: 0.98;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-text h1 span {
+        white-space: normal;
+    }
+
+    .hero-description {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+
+    .earth-container {
+        width: 300px;
+        height: 300px;
+    }
+
+}
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero-text h1 span {
+        white-space: normal;
+    }
+
+}
+
+/* =========================================================
+   PROBLEM IMAGE
+   ========================================================= */
+
+.problem-visual {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.problem-visual .image-frame {
+    width: min(100%, 520px);
+    padding: 12px;
+    border-radius: 35px;
+    background: linear-gradient(
+        135deg,
+        var(--mint),
+        var(--blue),
+        var(--yellow),
+        var(--coral)
+    );
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.problem-visual .image-frame:hover {
+    transform: translateY(-10px) rotate(1.5deg) scale(1.02);
+
+    box-shadow:
+        0 25px 55px rgba(49, 83, 66, 0.20),
+        0 0 35px rgba(169, 217, 189, 0.35);
+}
+
+.problem-visual .image-frame img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
+    transition: transform 0.6s ease, filter 0.5s ease;
+}
+
+.problem-visual .image-frame:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.05) saturate(1.08);
+}
+
+.problem-visual .image-label {
+    position: absolute;
+    left: 35px;
+    bottom: 35px;
+
+    padding: 9px 17px;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: var(--green-dark);
+
+    transition: all 0.4s ease;
+}
+
+.problem-visual .image-frame:hover .image-label {
+    transform: translateY(-5px);
+    background: var(--white);
+    box-shadow: 0 8px 20px rgba(49, 83, 66, 0.15);
+}
+
+/* =====================================================
+
+/* =========================================================
+   FINAL SMALL FIX - GALLERY + LEAF DECORATIONS ONLY
+   ========================================================= */
+
+/* Gallery diturunkan supaya tulisan/pesan di atasnya tidak tertutup foto */
+.final-section > .eco-gallery,
+.eco-gallery {
+    margin-top: 145px;
+    height: 520px;
+}
+
+/* Jarak tiap kartu dibuat lebih rapi dan tidak menabrak bagian pesan */
+.eco-photo-1 {
+    top: 70px;
+}
+
+.eco-photo-2 {
+    top: 20px;
+}
+
+.eco-photo-3 {
+    top: 95px;
+}
+
+.eco-photo-4 {
+    top: 25px;
+}
+
+.eco-photo-5 {
+    top: 75px;
+}
+
+/* Daun dekorasi lembut di area kosong setiap halaman */
+.section,
+.topic-menu,
+.final-section {
+    position: relative;
+    isolation: isolate;
+}
+
+.section::before,
+.section::after,
+.topic-menu::before,
+.topic-menu::after {
+    content: "";
+    position: absolute;
+    width: 46px;
+    height: 20px;
+    border-radius: 100% 0 100% 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.48;
+    box-shadow: 0 8px 20px rgba(79, 128, 100, 0.08);
+}
+
+.section::before,
+.topic-menu::before {
+    top: 90px;
+    left: 3%;
+    background: #b9e3c8;
+    transform: rotate(-28deg);
+    animation: pageLeafLeft 5s ease-in-out infinite;
+}
+
+.section::after,
+.topic-menu::after {
+    right: 3%;
+    bottom: 90px;
+    background: #c8e9df;
+    transform: scaleX(-1) rotate(-28deg);
+    animation: pageLeafRight 5.5s ease-in-out infinite;
+}
+
+@keyframes pageLeafLeft {
+    0%, 100% { transform: rotate(-28deg) translateY(0); }
+    50% { transform: rotate(-18deg) translateY(-7px); }
+}
+
+@keyframes pageLeafRight {
+    0%, 100% { transform: scaleX(-1) rotate(-28deg) translateY(0); }
+    50% { transform: scaleX(-1) rotate(-18deg) translateY(-7px); }
+}
+
+/* Tambahan daun kecil di sudut atas/bawah tanpa mengganggu isi */
+.section-content,
+.section-heading,
+.topic-grid,
+.final-section > .eyebrow,
+.final-section > h2,
+.final-section > h3,
+.final-section > .final-text,
+.final-section > .final-choice,
+.final-section > .final-tagline,
+.final-section > .eco-gallery {
+    position: relative;
+    z-index: 1;
+}
+
+/* Di final section, daun ditempatkan jauh dari L-O-V-E */
+.final-section::before {
+    width: 620px;
+    height: 620px;
+    background: rgba(169, 217, 189, 0.20);
+    filter: blur(55px);
+}
+
+@media (max-width: 750px) {
+    .final-section > .eco-gallery,
+    .eco-gallery {
+        margin-top: 90px;
+        height: 720px;
+    }
+
+    .eco-photo-1 { top: 30px; }
+    .eco-photo-2 { top: 0; }
+    .eco-photo-3 { top: 40px; }
+    .eco-photo-4 { top: 10px; }
+    .eco-photo-5 { top: 35px; }
+
+    .section::before,
+    .section::after,
+    .topic-menu::before,
+    .topic-menu::after {
+        width: 34px;
+        height: 15px;
+        opacity: 0.35;
+    }
+}
+
+/* =========================================
+   VIDEO — THE PROBLEM
+   ========================================= */
+
+.problem-video {
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.problem-video video {
+    width: 100%;
+    max-width: 520px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 5px solid #dcefe3;
+    box-shadow: 0 12px 30px rgba(85, 123, 104, 0.15);
+    background: #f5faf7;
+    display: block;
+}
+
+.problem-video video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 35px rgba(85, 123, 104, 0.22);
+    transition: 0.3s ease;
+}
+
+/* =========================================
+   FINAL POSTER
+   ========================================= */
+
+.final-poster {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto 40px;
+}
+
+.final-poster .image-frame {
+    width: 100%;
+    max-width: 700px;
+}
+
+.final-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(85, 123, 104, 0.15);
+}
+
+/* =========================================
+   SMOOTH SCROLL PERFORMANCE
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Kurangi beban animasi saat scrolling */
+.reveal {
+    will-change: opacity, transform;
+}
+
+/* Jangan terlalu berat saat hover */
+.problem-video video:hover,
+.eco-photo:hover,
+.pollution-card:hover,
+.image-frame:hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Video jangan terus diproses di luar area layar */
+.problem-video video {
+    contain: layout paint;
+}

@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: "Times New Roman", serif;
+    color: #574364;
+
+    /* Replace sylvanian-bg.jpg with your background image filename */
+    background-image:
+        linear-gradient(rgba(255, 248, 255, 0.45),
+                        rgba(255, 248, 255, 0.45)),
+        url("star.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    background-color: #a0ffe6;
+    color: #8060a8;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 34px;
+    margin: 15px 0 32px;
+    padding: 8px;
+}
+
+table {
+    width: 99%;
+    margin: 0 auto 32px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: #d66dff;
+}
+
+th, td {
+    border: 1px solid #384877;
+    padding: 10px 7px;
+    font-size: 18px;
+}
+
+th {
+    text-align: center;
+    font-weight: bold;
+    background-color: #d8c4f0;
+    color: #574364;
+}
+
+.nilai td {
+    background-color: #e4d5f5;
+}
+
+.nilai tr:nth-child(2) th {
+    background-color: #fc81b3;
+}
+
+.nilai tr:nth-child(odd) td {
+    background-color: #f9baff;
+}
+
+.nilai tr:nth-child(even) td {
+    background-color: #ffc9df;
+}
+
+.merge th,
+.merge td {
+    height: 36px;
+    background-color: #e4d5f5;
+}
+
+.merge tr:nth-child(2) th {
+    background-color: #ffc9df;
+}
+
+.merge tr:nth-child(4) th {
+    background-color: #ffc9df;
+}
+
+.merge tr:last-child th:nth-child(1),
+.merge tr:last-child th:nth-child(2),
+.merge tr:last-child th:nth-child(4),
+.merge tr:last-child th:nth-child(5),
+.merge tr:last-child th:nth-child(6) {
+    background-color: #ffc9df;
+}
+
+th:hover,
+td:hover {
+    background-color: #f3b5d2 !important;
+    color: #49a8f0;
+    transition: 0.2s;
+}

@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>When Earth Can't Breathe</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="pencemaranlingkungan.css">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+ <div class="header">
+          <p>Welcome to my exciting website</p>   
+        </div>
+        <div class="topnav">
+            <a href="index.html">Biodata</a>
+            <a href="table_gabungan.html">tabel</a>
+            <a href="List.html">List</a>
+            <a href="indexxx.html">STS</a>
+        </div>
+
+    <!-- =====================================================
+         BACKGROUND MUSIC
+         ===================================================== -->
+
+    <audio id="bg-music" loop controls>
+
+        <source src="CJR Coboy Junior - Terhebat Lirik (Color Coded Lyrics).mp3" type="audio/mpeg">
+
+        Browser kamu tidak mendukung audio.
+
+    </audio>
+
+    <script>
+const music = document.getElementById("bg-music");
+
+if (music) {
+    music.volume = 0.5;
+
+    document.addEventListener("click", function () {
+        if (music.paused) {
+            music.play().catch(function () {});
+        }
+    }, { once: true });
+}
+</script>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            93 KARINA-ENVIRONMENT
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#home">HOME</a>
+
+            <a href="#problem">PROBLEM</a>
+
+            <a href="#pollution">POLLUTION</a>
+
+            <a href="#causes">CAUSES</a>
+
+            <a href="#impact">IMPACT</a>
+
+            <a href="#solution">SOLUTION</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HOME / HERO
+         ===================================================== -->
+
+    <header class="hero" id="home">
+
+
+        <!-- Floating Decorations -->
+
+        <div class="floating-circle circle-one"></div>
+
+        <div class="floating-circle circle-two"></div>
+
+        <div class="floating-circle circle-three"></div>
+
+
+
+        <!-- Small Animated Particles -->
+
+        <div class="particles">
+
+            <span>✦</span>
+
+            <span>•</span>
+
+            <span>✧</span>
+
+            <span>•</span>
+
+            <span>✦</span>
+
+            <span>·</span>
+
+        </div>
+
+
+
+        <!-- Hero Text -->
+
+        <div class="hero-text">
+
+            <p class="eyebrow">
+                CLASS 93/18 BY KARINA — ENVIRONMENT
+            </p>
+
+
+            <h1>
+
+                WHEN EARTH
+
+                <span>CAN'T BREATHE.</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Pencemaran lingkungan bukan hanya masalah yang kita lihat.
+                Ini adalah masalah yang kita hirup, gunakan, tinggali,
+                dan wariskan kepada generasi berikutnya. Hal ini dapat
+                memengaruhi kesehatan manusia, hewan, tumbuhan, dan
+                keseimbangan alam jika tidak diperhatikan sejak sekarang.
+
+            </p>
+
+
+            <a href="#problem" class="hero-button">
+
+                EXPLORE THE PROBLEM
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- Earth Image -->
+
+        <div class="earth-container">
+
+            <div class="earth-glow"></div>
+
+
+            <img
+                src="earth.jpg"
+                class="earth-image"
+                alt="Earth and environmental pollution"
+            >
+
+
+            <div class="earth-orbit">
+
+                <span>●</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Scroll Indicator -->
+
+        <div class="scroll-indicator">
+
+            <span>CHOOSE A TOPIC</span>
+
+            <div></div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         TOPIC MENU
+         ===================================================== -->
+
+    <section class="topic-menu" id="menu">
+
+
+        <div class="section-heading center">
+
+            <p class="eyebrow">
+                EXPLORE THE WEBSITE
+            </p>
+
+
+            <h2>
+
+                Choose where
+
+                <em>you want to go.</em>
+
+            </h2>
+
+
+            <p class="menu-description">
+
+                Tidak perlu membaca semuanya dari awal sampai akhir.
+                Pilih topik yang ingin kamu pelajari terlebih dahulu.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="topic-grid">
+
+
+            <!-- TOPIC 01 -->
+
+            <a href="#problem" class="topic-card">
+
+                <span class="topic-number">
+                    01
+                </span>
+
+
+                <div class="topic-icon">
+                    !
+                </div>
+
+
+                <h3>
+                    PROBLEM
+                </h3>
+
+
+                <p>
+
+                    Memahami apa itu pencemaran lingkungan
+                    dan mengapa masalah ini penting.
+
+                </p>
+
+
+                <strong>
+                    ENTER →
+                </strong>
+
+            </a>
+
+
+
+            <!-- TOPIC 02 -->
+
+            <a href="#pollution" class="topic-card">
+
+                <span class="topic-number">
+                    02
+                </span>
+
+
+                <div class="topic-icon">
+                    ◌
+                </div>
+
+
+                <h3>
+                    POLLUTION
+                </h3>
+
+
+                <p>
+
+                    Mengenal tiga jenis utama pencemaran:
+                    udara, air, dan tanah.
+
+                </p>
+
+
+                <strong>
+                    ENTER →
+                </strong>
+
+            </a>
+
+
+
+            <!-- TOPIC 03 -->
+
+            <a href="#causes" class="topic-card">
+
+                <span class="topic-number">
+                    03
+                </span>
+
+
+                <div class="topic-icon">
+                    →
+                </div>
+
+
+                <h3>
+                    CAUSES
+                </h3>
+
+
+                <p>
+
+                    Mengetahui berbagai kegiatan yang
+                    dapat menyebabkan pencemaran.
+
+                </p>
+
+
+                <strong>
+                    ENTER →
+                </strong>
+
+            </a>
+
+
+
+            <!-- TOPIC 04 -->
+
+            <a href="#impact" class="topic-card">
+
+                <span class="topic-number">
+                    04
+                </span>
+
+
+                <div class="topic-icon">
+                    ♡
+                </div>
+
+
+                <h3>
+                    IMPACT
+                </h3>
+
+
+                <p>
+
+                    Melihat dampak pencemaran terhadap
+                    manusia, hewan, tumbuhan, dan ekosistem.
+
+                </p>
+
+
+                <strong>
+                    ENTER →
+                </strong>
+
+            </a>
+
+
+
+            <!-- TOPIC 05 -->
+
+            <a href="#solution" class="topic-card">
+
+                <span class="topic-number">
+                    05
+                </span>
+
+
+                <div class="topic-icon">
+                    ✓
+                </div>
+
+
+                <h3>
+                    SOLUTION
+                </h3>
+
+
+                <p>
+
+                    Menemukan kebiasaan sederhana yang
+                    dapat membantu menjaga lingkungan.
+
+                </p>
+
+
+                <strong>
+                    ENTER →
+                </strong>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROBLEM
+         ===================================================== -->
+
+    <section class="section problem-section" id="problem">
+
+
+        <div class="section-number">
+            01
+        </div>
+
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                THE PROBLEM
+            </p>
+
+
+            <h2>
+
+                Ketika lingkungan
+
+                <em>mulai kehilangan</em>
+
+                keseimbangannya.
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="problem-layout">
+
+
+            <!-- Problem Text -->
+
+            <div class="problem-text reveal">
+
+                <p>
+
+                    Lingkungan merupakan tempat bagi manusia, hewan,
+                    dan tumbuhan untuk hidup. Di dalamnya terdapat udara,
+                    air, tanah, serta berbagai makhluk hidup yang saling
+                    berhubungan. Semua bagian tersebut memiliki peran
+                    masing-masing dan saling memengaruhi. Karena itu,
+                    jika salah satu bagian lingkungan mengalami kerusakan,
+                    bagian lainnya juga dapat ikut terkena dampaknya.
+
+                </p>
+
+
+                <p>
+
+                    Pencemaran lingkungan terjadi ketika zat, energi,
+                    atau bahan tertentu masuk ke lingkungan dalam jumlah
+                    yang menyebabkan kualitas lingkungan menurun.
+                    Pencemaran dapat terjadi di udara, air, maupun tanah.
+                    Ketika lingkungan tercemar, fungsi alaminya dapat
+                    terganggu dan makhluk hidup yang bergantung padanya
+                    juga dapat mengalami masalah.
+
+                </p>
+
+
+                <p>
+
+                    Masalah ini tidak selalu berasal dari kegiatan besar.
+                    Kebiasaan sederhana seperti membuang sampah sembarangan,
+                    menggunakan plastik secara berlebihan, membakar sampah,
+                    dan membuang limbah ke saluran air juga dapat menjadi
+                    bagian dari masalah. Jika kebiasaan tersebut dilakukan
+                    terus-menerus oleh banyak orang, jumlah pencemaran dapat
+                    semakin besar dan sulit untuk dikurangi.
+
+                </p>
+
+
+
+                <!-- Quote -->
+
+                <div class="quote-box">
+
+                    <span>“</span>
+
+                    <p>
+
+                        Lingkungan yang rusak tidak terjadi dalam satu hari.
+                        Begitu juga dengan memperbaikinya. Perubahan membutuhkan
+                        waktu, kepedulian, dan kebiasaan baik yang dilakukan
+                        secara terus-menerus.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+<!-- Problem Video + Image -->
+
+<div class="problem-visual reveal">
+
+    <!-- VIDEO -->
+    <div class="problem-video">
+        <video controls>
+            <source src="Indonesia Belum Merdeka Dari Sampah Plastik.mp4" type="video/mp4">
+            Browser kamu tidak mendukung video.
+        </video>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="image-frame">
+
+        <img 
+            src="bersih.jpg"
+            alt="Environmental pollution"
+        >
+
+        <div class="image-label">
+            <span>01</span>
+            OUR SHARED HOME
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#menu">
+                ← MENU
+            </a>
+
+
+            <a href="#pollution">
+                POLLUTION →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         POLLUTION TYPES
+         ===================================================== -->
+
+    <section class="section pollution-section" id="pollution">
+
+
+        <div class="section-number">
+            02
+        </div>
+
+
+        <div class="section-heading center reveal">
+
+            <p class="eyebrow">
+                THREE FACES OF POLLUTION
+            </p>
+
+
+            <h2>
+
+                Three problems.
+
+                <br>
+
+                <em>One environment.</em>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="pollution-grid">
+
+
+            <!-- AIR POLLUTION -->
+
+            <article class="pollution-card reveal">
+
+                <div class="card-image">
+
+                    <img
+                        src="air pollution.jpeg"
+                        alt="Air pollution"
+                    >
+
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <p class="card-type">
+                        AIR POLLUTION
+                    </p>
+
+
+                    <h3>
+
+                        Ketika udara yang kita hirup
+                        tidak lagi bersih.
+
+                    </h3>
+
+
+                    <p>
+
+                        Pencemaran udara terjadi ketika udara
+                        mengandung zat atau partikel berbahaya
+                        yang dapat mengganggu kesehatan manusia
+                        dan lingkungan. Sumbernya dapat berasal
+                        dari asap kendaraan, kegiatan industri,
+                        pembakaran sampah, dan berbagai aktivitas
+                        lainnya. Udara yang tercemar dapat membuat
+                        lingkungan menjadi kurang sehat dan juga
+                        memengaruhi makhluk hidup yang menghirupnya
+                        setiap hari.
+
+                    </p>
+
+
+                    <div class="cause-line">
+
+                        <span>ASAP</span>
+
+                        <span>→</span>
+
+                        <span>EMISI</span>
+
+                        <span>→</span>
+
+                        <span>UDARA TERCEMAR</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- WATER POLLUTION -->
+
+            <article class="pollution-card reveal">
+
+                <div class="card-image">
+
+                    <img
+                        src="water.jpg"
+                        alt="Water pollution"
+                    >
+
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <p class="card-type">
+                        WATER POLLUTION
+                    </p>
+
+
+                    <h3>
+
+                        Saat air berubah menjadi
+                        sumber masalah.
+
+                    </h3>
+
+
+                    <p>
+
+                        Sampah plastik, limbah rumah tangga,
+                        deterjen, minyak, dan limbah industri
+                        dapat masuk ke sungai, danau, maupun laut
+                        dan menurunkan kualitas air. Air yang tercemar
+                        dapat mengganggu kehidupan hewan dan tumbuhan
+                        yang hidup di dalamnya. Selain itu, pencemaran
+                        air juga dapat membuat sumber air menjadi
+                        tidak layak digunakan dan mengganggu kegiatan
+                        manusia yang bergantung pada air tersebut.
+
+                    </p>
+
+
+                    <div class="cause-line">
+
+                        <span>LIMBAH</span>
+
+                        <span>→</span>
+
+                        <span>SUNGAI</span>
+
+                        <span>→</span>
+
+                        <span>EKOSISTEM</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- LAND POLLUTION -->
+
+            <article class="pollution-card reveal">
+
+                <div class="card-image">
+
+                    <img
+                        src="land.jpeg"
+                        alt="Land pollution"
+                    >
+
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <p class="card-type">
+                        LAND POLLUTION
+                    </p>
+
+
+                    <h3>
+
+                        Ketika tanah kehilangan
+                        kualitasnya.
+
+                    </h3>
+
+
+                    <p>
+
+                        Penumpukan sampah, plastik, limbah rumah
+                        tangga, dan penggunaan bahan kimia tertentu
+                        dapat menurunkan kualitas tanah dan
+                        mengganggu organisme di dalamnya. Sampah
+                        yang sulit terurai juga dapat bertahan dalam
+                        waktu yang lama dan membuat lingkungan terlihat
+                        kotor. Jika kondisi tanah terus menurun,
+                        pertumbuhan tanaman dan kehidupan organisme
+                        yang ada di dalam tanah juga dapat terganggu.
+
+                    </p>
+
+
+                    <div class="cause-line">
+
+                        <span>SAMPAH</span>
+
+                        <span>→</span>
+
+                        <span>TANAH</span>
+
+                        <span>→</span>
+
+                        <span>KEHIDUPAN</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#menu">
+                ← MENU
+            </a>
+
+
+            <a href="#causes">
+                CAUSES →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CAUSES
+         ===================================================== -->
+
+    <section class="section causes-section" id="causes">
+
+
+        <div class="section-number">
+            03
+        </div>
+
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                WHERE DOES IT COME FROM?
+            </p>
+
+
+            <h2>
+
+                Pencemaran
+
+                <em>tidak muncul begitu saja.</em>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="cause-flow">
+
+
+            <!-- TRANSPORTATION -->
+
+            <div class="flow-item reveal">
+
+                <div class="flow-icon">
+                    🚗
+                </div>
+
+
+                <div>
+
+                    <span>01</span>
+
+                    <h3>
+                        TRANSPORTATION
+                    </h3>
+
+
+                    <p>
+
+                        Kendaraan menghasilkan emisi
+                        yang dapat menurunkan kualitas udara.
+                        Asap kendaraan berasal dari proses
+                        pembakaran bahan bakar dan dapat menambah
+                        jumlah zat pencemar di udara. Semakin banyak
+                        kendaraan yang digunakan tanpa pengelolaan
+                        emisi yang baik, semakin besar pula pengaruhnya
+                        terhadap kualitas udara di sekitar kita.
+
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+
+            <!-- INDUSTRY -->
+
+            <div class="flow-item reveal">
+
+                <div class="flow-icon">
+                    🏭
+                </div>
+
+
+                <div>
+
+                    <span>02</span>
+
+                    <h3>
+                        INDUSTRY
+                    </h3>
+
+
+                    <p>
+
+                        Kegiatan industri dapat menghasilkan
+                        asap dan berbagai jenis limbah. Jika limbah
+                        tidak dikelola dengan baik, limbah tersebut
+                        dapat masuk ke udara, air, atau tanah dan
+                        menyebabkan pencemaran. Oleh karena itu,
+                        kegiatan industri perlu dilakukan dengan
+                        memperhatikan cara pengolahan limbah dan
+                        dampaknya terhadap lingkungan sekitar.
+
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+
+            <!-- HOUSEHOLD WASTE -->
+
+            <div class="flow-item reveal">
+
+                <div class="flow-icon">
+                    🗑️
+                </div>
+
+
+                <div>
+
+                    <span>03</span>
+
+                    <h3>
+                        HOUSEHOLD WASTE
+                    </h3>
+
+
+                    <p>
+
+                        Sampah rumah tangga dapat mencemari
+                        tanah dan sumber air jika tidak dikelola.
+                        Contohnya adalah sisa makanan, plastik,
+                        kemasan, dan berbagai barang yang sudah
+                        tidak digunakan. Jika sampah dibuang
+                        sembarangan atau masuk ke saluran air,
+                        masalah tersebut dapat semakin besar dan
+                        memengaruhi kebersihan lingkungan tempat tinggal.
+
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+
+            <!-- DEFORESTATION -->
+
+            <div class="flow-item reveal">
+
+                <div class="flow-icon">
+                    🌳
+                </div>
+
+
+                <div>
+
+                    <span>04</span>
+
+                    <h3>
+                        DEFORESTATION
+                    </h3>
+
+
+                    <p>
+
+                        Kerusakan hutan dapat mengganggu
+                        keseimbangan ekosistem. Hutan menjadi tempat
+                        hidup bagi banyak hewan dan tumbuhan serta
+                        memiliki peran penting dalam menjaga kondisi
+                        lingkungan. Ketika hutan berkurang akibat
+                        penebangan atau perubahan lahan, habitat
+                        makhluk hidup dapat ikut berkurang dan
+                        keseimbangan alam dapat terganggu.
+
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+
+            <!-- LACK OF AWARENESS -->
+
+            <div class="flow-item reveal">
+
+                <div class="flow-icon">
+                    💭
+                </div>
+
+
+                <div>
+
+                    <span>05</span>
+
+                    <h3>
+                        LACK OF AWARENESS
+                    </h3>
+
+
+                    <p>
+
+                        Kebiasaan yang tidak peduli terhadap
+                        lingkungan dapat memperbesar masalah.
+                        Hal sederhana seperti membuang sampah
+                        sembarangan atau menggunakan barang sekali
+                        pakai secara berlebihan mungkin terlihat kecil,
+                        tetapi jika dilakukan terus-menerus oleh banyak
+                        orang, dampaknya dapat menjadi lebih besar.
+                        Kesadaran menjadi salah satu langkah penting
+                        untuk mengubah kebiasaan tersebut.
+
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#menu">
+                ← MENU
+            </a>
+
+
+            <a href="#impact">
+                IMPACT →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IMPACT
+         ===================================================== -->
+
+    <section class="section impact-section" id="impact">
+
+
+        <div class="section-number">
+            04
+        </div>
+
+
+        <div class="section-heading center reveal">
+
+            <p class="eyebrow">
+                THE IMPACT
+            </p>
+
+
+            <h2>
+
+                One problem.
+
+                <br>
+
+                <em>Many consequences.</em>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="impact-grid">
+
+
+            <!-- HUMANS -->
+
+            <div class="impact-card reveal">
+
+                <span>01</span>
+
+
+                <div class="impact-icon">
+                    ♡
+                </div>
+
+
+                <h3>
+                    FOR HUMANS
+                </h3>
+
+
+                <p>
+
+                    Pencemaran dapat meningkatkan risiko
+                    gangguan kesehatan dan menurunkan
+                    kualitas hidup manusia. Udara yang tercemar
+                    dapat mengganggu sistem pernapasan, sedangkan
+                    air dan makanan yang tercemar juga dapat
+                    menimbulkan masalah bagi manusia. Karena itu,
+                    lingkungan yang bersih sangat penting untuk
+                    mendukung kehidupan sehari-hari.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ANIMALS -->
+
+            <div class="impact-card reveal">
+
+                <span>02</span>
+
+
+                <div class="impact-icon">
+                    ◌
+                </div>
+
+
+                <h3>
+                    FOR ANIMALS
+                </h3>
+
+
+                <p>
+
+                    Habitat dan sumber makanan hewan
+                    dapat terganggu akibat perubahan
+                    kondisi lingkungan. Sampah dan pencemaran
+                    dapat membuat hewan kehilangan tempat hidup
+                    yang sesuai. Perubahan lingkungan juga dapat
+                    memengaruhi sumber makanan dan air yang
+                    mereka butuhkan untuk bertahan hidup.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- PLANTS -->
+
+            <div class="impact-card reveal">
+
+                <span>03</span>
+
+
+                <div class="impact-icon">
+                    ✿
+                </div>
+
+
+                <h3>
+                    FOR PLANTS
+                </h3>
+
+
+                <p>
+
+                    Tanah, air, dan udara yang tercemar
+                    dapat mengganggu pertumbuhan tumbuhan.
+                    Tumbuhan membutuhkan lingkungan yang sesuai
+                    untuk mendapatkan air, nutrisi, dan udara yang
+                    cukup. Jika kondisi lingkungan berubah terlalu
+                    banyak, pertumbuhan tumbuhan dapat ikut
+                    terganggu dan memengaruhi kehidupan makhluk
+                    hidup lainnya.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ECOSYSTEMS -->
+
+            <div class="impact-card reveal">
+
+                <span>04</span>
+
+
+                <div class="impact-icon">
+                    ∞
+                </div>
+
+
+                <h3>
+                    FOR ECOSYSTEMS
+                </h3>
+
+
+                <p>
+
+                    Pencemaran dapat mengubah hubungan
+                    antarorganisme dan mengganggu keseimbangan
+                    ekosistem. Setiap makhluk hidup memiliki peran
+                    dalam ekosistem, sehingga perubahan pada satu
+                    bagian dapat memengaruhi bagian lainnya. Jika
+                    pencemaran terus terjadi, keseimbangan yang
+                    terbentuk secara alami dapat menjadi semakin
+                    sulit untuk dipertahankan.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FUTURE -->
+
+            <div class="impact-card future-card reveal">
+
+                <span>05</span>
+
+
+                <div class="impact-icon">
+                    →
+                </div>
+
+
+                <h3>
+                    FOR THE FUTURE
+                </h3>
+
+
+                <p>
+
+                    Jika terus dibiarkan, generasi mendatang
+                    dapat menghadapi lingkungan dengan
+                    kualitas yang lebih buruk. Mereka mungkin
+                    harus menghadapi masalah lingkungan yang
+                    lebih besar dibandingkan sekarang. Karena itu,
+                    menjaga lingkungan bukan hanya tentang keadaan
+                    hari ini, tetapi juga tentang kondisi bumi yang
+                    akan diwariskan kepada generasi berikutnya.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#menu">
+                ← MENU
+            </a>
+
+
+            <a href="#solution">
+                SOLUTION →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOLUTION
+         ===================================================== -->
+
+    <section class="section solution-section" id="solution">
+
+
+        <div class="section-number">
+            05
+        </div>
+
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                SMALL ACTIONS, BIG CHANGE
+            </p>
+
+
+            <h2>
+
+                Perubahan besar
+
+                <em>dimulai dari kebiasaan kecil.</em>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="solution-list">
+
+
+            <!-- REDUCE -->
+
+            <div class="solution-item reveal">
+
+                <span>01</span>
+
+
+                <div>
+
+                    <h3>
+                        REDUCE
+                    </h3>
+
+
+                    <p>
+
+                        Kurangi penggunaan barang yang
+                        sebenarnya tidak diperlukan. Kita dapat
+                        mulai dengan membeli barang sesuai kebutuhan
+                        dan menghindari penggunaan barang sekali
+                        pakai secara berlebihan. Dengan mengurangi
+                        jumlah barang yang digunakan, jumlah sampah
+                        yang dihasilkan juga dapat ikut berkurang.
+
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ↓
+                </strong>
+
+            </div>
+
+
+
+            <!-- REUSE -->
+
+            <div class="solution-item reveal">
+
+                <span>02</span>
+
+
+                <div>
+
+                    <h3>
+                        REUSE
+                    </h3>
+
+
+                    <p>
+
+                        Gunakan kembali barang yang masih
+                        layak digunakan. Contohnya adalah menggunakan
+                        botol minum, tas belanja, atau wadah yang
+                        dapat dipakai berkali-kali. Kebiasaan ini
+                        dapat membantu mengurangi jumlah barang
+                        yang langsung dibuang setelah digunakan
+                        satu kali.
+
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ↓
+                </strong>
+
+            </div>
+
+
+
+            <!-- RECYCLE -->
+
+            <div class="solution-item reveal">
+
+                <span>03</span>
+
+
+                <div>
+
+                    <h3>
+                        RECYCLE
+                    </h3>
+
+
+                    <p>
+
+                        Pisahkan sampah dan manfaatkan
+                        kembali barang yang masih berguna. Sampah
+                        yang dapat didaur ulang sebaiknya dipisahkan
+                        dari sampah lainnya agar lebih mudah dikelola.
+                        Dengan melakukan hal ini, beberapa barang
+                        yang biasanya langsung dibuang masih dapat
+                        dimanfaatkan dan diolah menjadi sesuatu
+                        yang berguna.
+
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ↓
+                </strong>
+
+            </div>
+
+
+
+            <!-- SAVE ENERGY -->
+
+            <div class="solution-item reveal">
+
+                <span>04</span>
+
+
+                <div>
+
+                    <h3>
+                        SAVE ENERGY
+                    </h3>
+
+
+                    <p>
+
+                        Matikan lampu dan perangkat elektronik
+                        ketika tidak sedang digunakan. Selain
+                        menghemat energi, kebiasaan ini juga
+                        membuat kita lebih sadar terhadap penggunaan
+                        listrik sehari-hari. Kita dapat mulai dari
+                        hal sederhana seperti mematikan lampu
+                        sebelum meninggalkan ruangan dan mencabut
+                        perangkat yang tidak diperlukan.
+
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ↓
+                </strong>
+
+            </div>
+
+
+
+            <!-- PROTECT NATURE -->
+
+            <div class="solution-item reveal">
+
+                <span>05</span>
+
+
+                <div>
+
+                    <h3>
+                        PROTECT NATURE
+                    </h3>
+
+
+                    <p>
+
+                        Jaga tanaman, pohon, sungai,
+                        dan lingkungan sekitar. Tidak merusak
+                        tanaman, menjaga kebersihan sungai, serta
+                        ikut merawat ruang hijau merupakan contoh
+                        tindakan sederhana yang dapat dilakukan.
+                        Lingkungan yang terjaga akan memberikan
+                        tempat hidup yang lebih baik bagi manusia
+                        maupun makhluk hidup lainnya.
+
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ↓
+                </strong>
+
+            </div>
+
+
+
+            <!-- STOP LITTERING -->
+
+            <div class="solution-item reveal">
+
+                <span>06</span>
+
+
+                <div>
+
+                    <h3>
+                        STOP LITTERING
+                    </h3>
+
+
+                    <p>
+
+                        Buang sampah pada tempatnya dan
+                        jangan membiarkannya menjadi bagian
+                        dari lingkungan. Sampah yang dibuang
+                        sembarangan dapat terbawa ke saluran air,
+                        sungai, atau tempat lainnya. Dengan membuang
+                        sampah dengan benar, kita sudah melakukan
+                        langkah sederhana untuk menjaga lingkungan
+                        tetap bersih dan mengurangi kemungkinan
+                        terjadinya pencemaran.
+
+                    </p>
+
+                </div>
+
+
+                <strong>
+                    ✓
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#menu">
+                ← MENU
+            </a>
+
+
+            <a href="#future">
+                WHAT IF →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHAT IF
+         ===================================================== -->
+
+    <section class="what-if" id="future">
+
+
+        <div class="statement-orb"></div>
+
+
+        <div class="what-if-content reveal">
+
+            <p class="eyebrow">
+                06 — WHAT IF WE DO NOTHING?
+            </p>
+
+
+            <h2>
+
+                The future is not
+
+                <em>far away.</em>
+
+            </h2>
+
+
+            <p>
+
+                Kita sering menganggap masalah lingkungan
+                terlalu besar untuk diselesaikan oleh satu orang.
+                Padahal, masalah yang besar juga dapat terbentuk
+                dari jutaan tindakan kecil yang dilakukan setiap hari.
+                Kebiasaan yang terlihat sederhana, seperti membuang
+                sampah sembarangan atau menggunakan plastik secara
+                berlebihan, dapat memberikan dampak jika dilakukan
+                terus-menerus oleh banyak orang.
+
+            </p>
+
+
+            <p>
+
+                Jika semakin banyak orang mengubah kebiasaannya,
+                perubahan positif juga dapat terbentuk. Tidak semua
+                perubahan harus dimulai dari sesuatu yang besar.
+                Kita dapat memulainya dari lingkungan terdekat,
+                seperti rumah, sekolah, dan tempat umum. Ketika
+                semakin banyak orang melakukan hal yang sama,
+                kebiasaan kecil tersebut dapat memberikan pengaruh
+                yang lebih besar bagi lingkungan.
+
+            </p>
+
+
+            <div class="future-line">
+
+                <span>
+                    TODAY
+                </span>
+
+
+                <span>
+                    →
+                </span>
+
+
+                <span>
+                    OUR CHOICES
+                </span>
+
+
+                <span>
+                    →
+                </span>
+
+
+                <span>
+                    TOMORROW
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#solution">
+                ← SOLUTION
+            </a>
+
+
+            <a href="#home">
+                BACK TO HOME ↑
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL MESSAGE / FOOTER
+         ===================================================== -->
+
+    <footer class="final-section" id="message">
+
+
+        <p class="eyebrow">
+            07 — OUR MESSAGE
+        </p>
+
+
+        <h2>
+
+            Bumi tidak membutuhkan
+            kita untuk menjadi sempurna.
+
+        </h2>
+
+
+        <h3>
+
+            Bumi membutuhkan kita
+
+            <em>untuk peduli.</em>
+
+        </h3>
+
+
+        <p class="final-text">
+
+            Kita hidup di lingkungan yang sama,
+            menghirup udara yang sama, dan bergantung
+            pada sumber daya alam yang sama.
+            Karena itu, menjaga lingkungan merupakan
+            tanggung jawab bersama. Menjaga lingkungan
+            tidak harus selalu dimulai dengan tindakan besar.
+            Hal-hal sederhana seperti mengurangi sampah,
+            menghemat energi, menjaga kebersihan, dan
+            menggunakan barang dengan bijak juga merupakan
+            bagian dari kepedulian terhadap bumi. Jika setiap
+            orang mulai melakukan bagiannya, lingkungan yang
+            lebih baik dapat terbentuk secara perlahan.
+
+        </p>
+
+
+
+        <!-- Final Choice -->
+
+        <div class="final-choice">
+
+            <span>
+                THE CHOICE
+            </span>
+
+
+            <strong>
+                IS OURS.
+            </strong>
+
+        </div>
+
+
+        <p class="final-tagline">
+
+            START SMALL. THINK BIGGER. PROTECT OUR PLANET.
+
+        </p>
+
+
+
+        <!-- =================================================
+             ECO GALLERY
+             NORMAL IMAGE → HOVER IMAGE
+             ================================================= 
+
+
+<div class="eco-gallery">
+
+    <!-- 01 -->
+    <div class="eco-photo eco-photo-1">
+
+        <img src="L.png" class="eco-normal" alt="Green forest">
+
+        <img src="hutan.jpg" class="eco-hover" alt="Healthy forest">
+
+        <div class="eco-photo-label">
+            <span>01</span>
+            FORESTS
+        </div>
+
+    </div>
+
+
+    <!-- 02 -->
+    <div class="eco-photo eco-photo-2">
+
+        <img src="o.jpg" class="eco-normal" alt="Green city">
+
+        <img src="city.jpg" class="eco-hover" alt="Sustainable green city">
+
+        <div class="eco-photo-label">
+            <span>02</span>
+            GREEN CITIES
+        </div>
+
+    </div>
+
+
+    <!-- 03 -->
+    <div class="eco-photo eco-photo-3">
+
+        <img src="v.jpg" class="eco-normal" alt="Clean water">
+
+        <img src="ocean.jpg" class="eco-hover" alt="Clean river and nature">
+
+        <div class="eco-photo-label">
+            <span>03</span>
+            CLEAN WATER
+        </div>
+
+    </div>
+
+
+    <!-- 04 -->
+    <div class="eco-photo eco-photo-4">
+
+        <img src="e.png" class="eco-normal" alt="Our Earth">
+
+        <img src="bumi.webp" class="eco-hover" alt="Beautiful clean Earth">
+
+        <div class="eco-photo-label">
+            <span>04</span>
+            OUR EARTH
+        </div>
+
+    </div>
+
+
+    <!-- 05 -->
+    <div class="eco-photo eco-photo-5">
+
+        <img src="thk.png" class="eco-normal" alt="New plant life">
+
+        <img src="photo 5.jpg" class="eco-hover" alt="Growing green plants">
+
+        <div class="eco-photo-label">
+            <span>05</span>
+            NEW LIFE
+        </div>
+
+    </div>
+
+</div>        
+
+        <!-- Gallery Message -->
+
+        <div class="gallery-message">
+
+            <p>
+                THIS IS THE FUTURE WE CAN HELP CREATE.
+            </p>
+
+
+            <span>
+                Keep it green. Keep it alive.
+            </span>
+
+        </div>
+
+
+
+        <!-- Final Navigation -->
+
+        <div class="page-navigation">
+
+            <a href="#home">
+                ↑ BACK TO HOME
+            </a>
+
+        </div>
+
+
+    </footer>
+
+
+
+</body>
+
+</html>
+
+<!-- =========================
+     FINAL POSTER
+     ========================= -->
+
+<div class="final-poster">
+    <div class="image-frame">
+        <img src="poster.jpg" alt="Our Home">
+
+        <div class="image-label">
+            OUR HOME
+        </div>
+    </div>
+</div>
